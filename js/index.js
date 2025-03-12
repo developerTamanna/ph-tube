@@ -30,8 +30,9 @@ function loadCategories() {
     fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
     .then((response) =>response.json() )
     .then((data) => {
-        document.getElementById("btn-all").classList.add.add("active")
-        (displayVideos(data.videos))
+        removeActive();
+        document.getElementById("btn-all").classList.add("active");
+        displayVideos(data.videos);
     } )
    }
 
@@ -47,6 +48,16 @@ function loadCategories() {
         clickButton.classList.add("active")
         console.log(clickButton)
         displayVideos(data.category)
+    } )
+   }
+
+   const loadVideoDetails=(videoId)=>{
+    console.log(videoId);
+    const url =`https://openapi.programming-hero.com/api/phero-tube/video/${videoId}`
+    fetch(url)
+    .then((res) =>res.json() )
+    .then((data) =>{
+        console.log(data)
     } )
    }
 // category dekhanor function
@@ -93,7 +104,7 @@ videos.forEach(video => {
    <div class="card bg-base-100  ">
       <figure
        class="relative">
-        <img class="w-full h-[150px] object-cover"
+        <img class="w-full h-[200px] object-cover"
           src="${video.thumbnail}"
           alt="Shoes" />
           <span class="absolute text-white bg-black bottom-2 right-2 rounded-sm px-2 text-sm ">3hrs 56 min ago</span>
@@ -115,6 +126,8 @@ videos.forEach(video => {
         </div>
         
       </div>
+    <button onclick="loadVideoDetails('${video.video_id}')" class="btn btn-block">Show Details</button>
+
     </div>
     `
        videoContainer.appendChild(videoCard)
