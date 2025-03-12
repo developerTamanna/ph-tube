@@ -26,8 +26,8 @@ function loadCategories() {
 //      *category: 'Music'
 //     *}
   //  vdo load func:
-  function loadVideos(){
-    fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
+  function loadVideos(searchText = ""){
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`)
     .then((response) =>response.json() )
     .then((data) => {
         removeActive();
@@ -141,9 +141,13 @@ videos.forEach(video => {
         </div>
         <div class="intro">
             <h3 class="text-sm font-semibold" >${video.title}</h3>
-            <p class="text-sm text-gray-400 flex gap-1 items-center">${video.authors[0].profile_name}  
-              <img width="35" height="35" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
-            </p>
+          <p class="text-sm text-gray-400 flex gap-1 items-center">
+    ${video.authors[0].profile_name}  
+    ${video.authors[0].verified === true ? 
+        `<img width="35" height="35" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>` : 
+        ''}
+</p>
+
             <p class="text-sm text-gray-400 flex gap-1 items-center">${video.others.views}</p>
         </div>
         
@@ -156,5 +160,10 @@ videos.forEach(video => {
 });
 }
 
+document.getElementById("search-input").addEventListener("keyup", (event)=>{
+const input = event.target.value;
+// console.log(input);
+loadVideos(input)
+})
 
 loadCategories();
