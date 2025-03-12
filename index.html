@@ -27,20 +27,40 @@
             </div>
           </div>
         
-    </header>  <!-- next dynamic button -->
-    <nav>
-      <ul id="categories-container" class="flex justify-center gap-5 py-7">
-          
-          <button class="btn btn-sm bg-red-600 text-white">All</button>
-         
-      </ul>
-    </nav>
+        </header> 
 
-    <!-- video load section -->
+   
      
 
- <main>
+ <main class="w-11/12 mx-auto py-4">
+   <!-- next dynamic button -->
+<nav>
+  <ul id="categories-container" class="flex justify-center gap-5 py-7">
+      
+      <button class="btn btn-sm bg-red-600 text-white">All</button>
+     
+  </ul>
+</nav>
 
+ <!-- video load section -->
+  <section class="grid grid-cols-4 gap-5" id=" video-container" >
+    <div class="card bg-base-100  shadow-sm">
+      <figure
+       class="relative">
+        <img
+          src="https://i.ibb.co/QPNzYVy/moonlight.jpg"
+          alt="Shoes" />
+          <span class="absolute text-white bg-black bottom-2 right-2 rounded-sm px-2 ">3hrs 56 min ago</span>
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">Midnight Serenade</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
  </main>
  <footer>
 

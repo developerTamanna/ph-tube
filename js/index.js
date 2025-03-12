@@ -44,9 +44,32 @@ function loadCategories() {
         }
     }
 
+ //{category_id: '1001', video_id: 'aaal', thumbnail: 'https://i.ibb.co/hdtZYbB/enchnting.jpg', title: 'Enchanted Harmonies', authors: Array(1), …}
  
 const displayVideos=(videos)=>{
-   console.log(videos)
+//    console.log(videos)
+const videoContainer = document.getElementById(" video-container");
+videos.forEach(video => {
+    console.log(video)
+    const videoCard = document.createElement("div")
+    videoCard.innerHTML =`
+      <div class="card bg-base-100  shadow-sm">
+  <figure>
+    <img
+      src="${video.thumbnail}"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">${video.title}</h2>
+    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+    `
+       videoContainer.appendChild(videoCard)
+});
 }
 
 
