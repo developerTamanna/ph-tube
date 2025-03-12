@@ -53,20 +53,32 @@ videos.forEach(video => {
     console.log(video)
     const videoCard = document.createElement("div")
     videoCard.innerHTML =`
-      <div class="card bg-base-100  shadow-sm">
-  <figure>
-    <img
-      src="${video.thumbnail}"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">${video.title}</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+   <div class="card bg-base-100  ">
+      <figure
+       class="relative">
+        <img class="w-full h-[150px] object-cover"
+          src="${video.thumbnail}"
+          alt="Shoes" />
+          <span class="absolute text-white bg-black bottom-2 right-2 rounded-sm px-2 text-sm ">3hrs 56 min ago</span>
+      </figure>
+      <div class="flex gap-3 px0 py-5">
+        <div class="profile">
+          <div class="avatar">
+            <div class="ring-primary ring-offset-base-100 w-6 rounded-full ring ring-offset-2">
+              <img src="${video.authors[0].profile_picture}" />
+            </div>
+          </div>
+        </div>
+        <div class="intro">
+            <h3 class="text-sm font-semibold" >${video.title}</h3>
+            <p class="text-sm text-gray-400 flex gap-1 items-center">${video.authors[0].profile_name}  
+              <img width="35" height="35" src="https://img.icons8.com/color/48/verified-badge.png" alt="verified-badge"/>
+            </p>
+            <p class="text-sm text-gray-400 flex gap-1 items-center">${video.others.views}</p>
+        </div>
+        
+      </div>
     </div>
-  </div>
-</div>
     `
        videoContainer.appendChild(videoCard)
 });
