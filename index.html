@@ -8,6 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Ph-Tube</title>
+    <style>
+      .active{
+        background-color: #ff1f3d;
+        color:white
+      }
+    </style>
 </head>
 <body>
     <header class="w-11/12 mx-auto py-4  border-b-2 border-gray-300 ">
@@ -37,7 +43,7 @@
 <nav>
   <ul id="categories-container" class="flex justify-center gap-5 py-7">
       
-      <button onclick="loadVideos();" class="btn btn-sm bg-red-600 text-white">All</button>
+      <button id="btn-all"  onclick="loadVideos();" class="btn btn-sm bg-red-600 text-white">All</button>
      
   </ul>
 </nav>
@@ -70,6 +76,11 @@
         
       </div>
     </div> -->
+<div class="py-20 col-span-full flex flex-col text-center justify-center items-center">
+  <img class="w-[120px] " src="./assest/Icon.png" alt="">
+  <h2> videoContainer.innerHTML =""</h2>
+</div>
+
   </section>
  </main>
  <footer>
