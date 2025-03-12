@@ -57,9 +57,18 @@ function loadCategories() {
     fetch(url)
     .then((res) =>res.json() )
     .then((data) =>{
-        console.log(data)
+        displayVideoDetails(data.video)
+     
     } )
-   }
+   };
+  const displayVideoDetails = (video)=>{
+ console.log(video)
+ document.getElementById("video_details").showModal();
+ const detailsContainer = document.getElementById("details-container")
+ detailsContainer.innerHTML=`
+   <h2>${video.title}</h2>
+ `;
+  }
 // category dekhanor function
 
     function displayCategories(categories){
