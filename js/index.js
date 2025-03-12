@@ -86,4 +86,3 @@ videos.forEach(video => {
 
 
 loadCategories();
-loadVideos();
