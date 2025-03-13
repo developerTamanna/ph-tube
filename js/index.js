@@ -123,10 +123,10 @@ videos.forEach(video => {
     console.log(video)
     const videoCard = document.createElement("div")
     videoCard.innerHTML =`
-   <div class="card bg-base-100  ">
+   <div class="card relative bg-base-100  h-[300px]  ">
       <figure
        class="relative">
-        <img class="w-full h-[200px] object-cover"
+        <img class="w-full h-[150px] object-cover"
           src="${video.thumbnail}"
           alt="Shoes" />
           <span class="absolute text-white bg-black bottom-2 right-2 rounded-sm px-2 text-sm ">3hrs 56 min ago</span>
@@ -152,7 +152,7 @@ videos.forEach(video => {
         </div>
         
       </div>
-    <button onclick="loadVideoDetails('${video.video_id}')" class="btn btn-block">Show Details</button>
+    <button  onclick="loadVideoDetails('${video.video_id}')" class="btn btn-block absolute bottom-0 w-full">Show Details</button>
 
     </div>
     `
