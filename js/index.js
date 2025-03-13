@@ -107,13 +107,13 @@ function loadCategories() {
  
 const displayVideos=(videos)=>{
 //    console.log(videos)
-const videoContainer = document.getElementById(" video-container");
+const videoContainer = document.getElementById("video-container");
  videoContainer.innerHTML ="";
  if(videos.length ==0){
     videoContainer.innerHTML =`
     <div class="py-20 col-span-full flex flex-col text-center justify-center items-center">
   <img class="w-[120px] " src="./assest/Icon.png" alt="">
-  <h2> videoContainer.innerHTML =""</h2>
+  <h2> Oops!! Sorry, There is no content here</h2>
 </div>
     `
  return ;
